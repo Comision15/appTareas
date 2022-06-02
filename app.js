@@ -1,5 +1,5 @@
 const {argv} = require('process');
-const {leerJSON} = require('./modulos/tareas');
+const {leerJSON, crearTarea} = require('./modulos/tareas');
 
 switch (argv[2]) {
     case "listar":
@@ -8,6 +8,9 @@ switch (argv[2]) {
             console.log(`(${tarea.id}) ${tarea.title} - ${tarea.state}`);
         });
         break;
+    case "crear":
+        crearTarea(argv[3])
+        break
 
     default:
         break;
